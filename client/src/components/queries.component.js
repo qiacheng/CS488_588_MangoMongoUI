@@ -45,7 +45,7 @@ state = {
   }
   
   getProjectQuery(id){
-    
+
     fetch(`${backendIP}/api/query/${id}`)
     .then((data) => data.json())
     .then((res) => {

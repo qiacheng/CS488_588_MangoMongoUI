@@ -52,6 +52,19 @@ router.get('/Query/:id', function(req,res){
     })
 })
 
+router.get('/collections/', function(req,res){
+    MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+        if (err) throw err;
+        const db = client.db("project")
+        db.listCollections().toArray(function(err, cols){
+            if(err) throw(err)
+            console.log(cols);
+            
+            client.close();
+            return res.json(cols);
+        })
+    });
+})
 
 
 
