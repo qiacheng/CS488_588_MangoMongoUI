@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 //import './App.css';
 
 const backendIP = 'http://34.83.87.49:8081';
-
+var q3png = require('./q3.png');
 class App extends Component {
 
   state = {
@@ -20,6 +20,10 @@ class App extends Component {
   }
 
   render(){
+    var q3style = {
+	height: '500px',
+	width: '700px',
+    }
     return (
       <div className="App">
         <header className="App-header">
@@ -30,7 +34,7 @@ class App extends Component {
           
           Q1: {this.state.data.Q1} <br /> <br/>
           Q2: {this.state.data.Q2} <br /> <br/>
-          Q3: {this.state.data.Q3} <br /> <br/>
+          Q3: <img src ={q3png} style = {q3style} alt ="q3image"></img> <br /> <br/>
           Q4: {this.state.data.Q4} <br /> <br/>
           Q5: {this.state.data.Q5} <br /> <br/>
           Q6: {this.state.data.Q6} <br /> <br/>
