@@ -46,7 +46,7 @@ while start != terminate:
 plt.plot(time, travel_times)
 plt.xlabel("Time")
 plt.ylabel("Travel times in seconds")
-plt.show()
+##plt.show()
 
 client.close()
 

@@ -1,6 +1,8 @@
 import React , {Component} from 'react';
 //import './App.css';
 
+const backendIP = 'http://34.83.87.49:8081';
+
 class App extends Component {
 
   state = {
@@ -12,6 +14,7 @@ class App extends Component {
     this.loaded = true;
     for(let i = 1 ; i <= 6; i ++){
       this.getProjectQuery(i);
+      console.log(i);
     }
     
   }
@@ -40,7 +43,7 @@ class App extends Component {
   
   getProjectQuery(id){
     
-    fetch(`http://localhost:3001/api/query/${id}`)
+    fetch(`${backendIP}/api/query/${id}`)
     .then((data) => data.json())
     .then((res) => {
       var result = this.state.data;
@@ -53,7 +56,7 @@ class App extends Component {
   }
 
   getDataFromDb(){
-    fetch('http://localhost:3001/api/getData')
+    fetch(backendIP + '/api/getData')
       .then((data) => data.json())
       .then((res) => this.setState({data: res.data}));
   }

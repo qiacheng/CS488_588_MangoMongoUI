@@ -2,7 +2,7 @@ const mongo = require('mongodb');
 const express = require('express');
 let {PythonShell} = require('python-shell');
 var cors = require('cors');
-const API_PORT = 3001;
+const API_PORT = 8081;
 const router = express.Router();
 const app = express();
 app.use(cors());
@@ -57,4 +57,4 @@ router.get('/Query/:id', function(req,res){
 
 app.use('/api', router);
 
-app.listen(API_PORT, () => console.log(`listening to port ${API_PORT}`));
+app.listen(API_PORT, '0.0.0.0', () => console.log(`listening to port ${API_PORT}`));
